@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import 'telephone-input-dropdown';
 
 export class TelephoneInputApp extends LitElement {
   static get properties() {
@@ -30,6 +31,7 @@ export class TelephoneInputApp extends LitElement {
         </form>
         <h2>Submitted Number:</h2>
         <p>${this.submitted_number}</p>
+        <telephone-input-dropdown></telephone-input-dropdown>
       </main>
     `;
   }
