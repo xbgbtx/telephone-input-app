@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
-import 'telephone-input-dropdown';
+import { TelephoneInputDropdown } from 'telephone-input-dropdown';
+customElements.define('telephone-input-dropdown', TelephoneInputDropdown);
 
 export class TelephoneInputApp extends LitElement {
   static get properties() {
