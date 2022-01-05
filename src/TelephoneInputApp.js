@@ -2,6 +2,11 @@ import { LitElement, html, css } from 'lit';
 import { TelephoneInputDropdown } from 'telephone-input-dropdown';
 customElements.define('telephone-input-dropdown', TelephoneInputDropdown);
 
+const backgroundHref = new URL(
+  '../assets/Square_Tiles-SLE.png',
+  import.meta.url
+).href;
+
 export class TelephoneInputApp extends LitElement {
   static get properties() {
     return {
@@ -12,6 +17,18 @@ export class TelephoneInputApp extends LitElement {
 
   static get styles() {
     return css`
+      :host {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+      }
+
       #content-div {
         display: inline-block;
         padding: 25px;
@@ -30,7 +47,7 @@ export class TelephoneInputApp extends LitElement {
 
   render() {
     return html`
-      <main>
+      <main style="background-image: url(${backgroundHref})">
         <div id="content-div">
           <h1>Telephone Number Input Tester!</h1>
           <form @submit=${this.submit}>
