@@ -11,7 +11,15 @@ export class TelephoneInputApp extends LitElement {
   }
 
   static get styles() {
-    return css``;
+    return css`
+      #content-div {
+        display: inline-block;
+        padding: 25px;
+        margin: 25px;
+        background-color: rgba(20, 20, 20, 0.7);
+        color: white;
+      }
+    `;
   }
 
   constructor() {
@@ -23,16 +31,17 @@ export class TelephoneInputApp extends LitElement {
   render() {
     return html`
       <main>
-        <h1>Telephone Number Input Tester!</h1>
-        <form @submit=${this.submit}>
-          <label for="telephone-input">Input telephone number:</label>
-          <input id="telephone-input" name="telephone-input" type="text" />
-          <br /><br />
-          <input type="submit" value="Submit" />
-        </form>
-        <h2>Submitted Number:</h2>
-        <p>${this.submitted_number}</p>
-        <telephone-input-dropdown></telephone-input-dropdown>
+        <div id="content-div">
+          <h1>Telephone Number Input Tester!</h1>
+          <form @submit=${this.submit}>
+            <telephone-input-dropdown
+              id="telephone-input"
+            ></telephone-input-dropdown>
+            <input type="submit" value="Submit" />
+          </form>
+          <h2>Submitted Number:</h2>
+          <p>${this.submitted_number}</p>
+        </div>
       </main>
     `;
   }
